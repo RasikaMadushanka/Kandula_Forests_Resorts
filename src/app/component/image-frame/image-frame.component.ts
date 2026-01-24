@@ -1,24 +1,35 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-image-frame',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './image-frame.component.html',
-  styleUrl: './image-frame.component.css'
+  styleUrls: ['./image-frame.component.css']
 })
-export class ImageFrameComponent {
-  public resortImages = [
-    { url: 'assets/hero-pool.jpg', size: 'big', title: 'Infinity Pool' },
-    { url: 'assets/room-1.jpg', size: 'wide', title: 'Ocean View Suite' },
-    { url: 'assets/food.jpg', size: 'standard', title: 'Fine Dining' },
-    { url: 'assets/spa.jpg', size: 'tall', title: 'Luxury Spa' },
-    { url: 'assets/beach.jpg', size: 'standard', title: 'Private Beach' },
-    { url: 'assets/lobby.jpg', size: 'wide', title: 'Grand Lobby' },
-    { url: 'assets/room-2.jpg', size: 'standard', title: 'Garden Villa' },
-    { url: 'assets/gym.jpg', size: 'standard', title: 'Wellness Center' },
-    { url: 'assets/bar.jpg', size: 'tall', title: 'Sunset Bar' },
-    { url: 'assets/garden.jpg', size: 'standard', title: 'Tropical Walk' }
+export class ImageFrameComponent implements OnInit {
+  public resortImages: any[] = [];
+
+  // Your resort images list
+  private rawImages = [
+   { url: 'assets/images/en1.jpeg', type: 'type-a' },
+    { url: 'assets/images/en2.jpeg', type: 'type-b' },
+    { url: 'assets/images/en3.jpeg', type: 'type-a' },
+    { url: 'assets/images/en4.jpeg', type: 'type-b' },
   ];
 
+  ngOnInit() {
+    // We use exactly 41 images for a perfect bloom (5 center, 12 middle, 24 outer)
+    this.resortImages = Array.from({ length: 41 }, (_, i) => ({
+      ...this.rawImages[i % this.rawImages.length],
+      id: i
+    }));
+  }
+
+  getLayer(index: number): string {
+    if (index < 5) return '1';   
+    if (index < 17) return '2';  
+    return '3';                  
+  }
 }

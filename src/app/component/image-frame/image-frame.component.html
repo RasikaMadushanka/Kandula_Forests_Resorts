@@ -1,0 +1,17 @@
+<div class="mandala-viewport">
+  <div class="mandala-container">
+    <div class="mandala-center"></div>
+
+    <div 
+      *ngFor="let img of resortImages; let i = index" 
+      class="petal"
+      [attr.data-layer]="getLayer(i)"
+      [style.--i]="i"
+    >
+      <div class="petal-card">
+        <img [src]="img.url" alt="resort-view">
+        <div class="overlay"></div>
+      </div>
+    </div>
+  </div>
+</div>
