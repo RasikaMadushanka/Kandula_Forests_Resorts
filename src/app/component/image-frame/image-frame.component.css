@@ -1,0 +1,138 @@
+:host {
+  /* Premium Resort Color Palette */
+  --gold-metallic: #c5a059;
+  --gold-glow: rgba(197, 160, 89, 0.4);
+  --deep-obsidian: #02040a;
+  --royal-midnight: #0a1428;
+  --ivory-accent: #f8f1e5;
+  
+  background-color: var(--deep-obsidian);
+  display: block;
+  margin: 0;
+}
+
+.mandala-viewport {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* Vignette Background: Creates a spotlight effect in the center 
+     to draw the eye to your resort photos.
+  */
+  background: radial-gradient(
+    circle at center, 
+    var(--royal-midnight) 0%, 
+    var(--deep-obsidian) 85%
+  );
+}
+
+.mandala-container {
+  position: relative;
+  width: 850px;
+  height: 850px;
+}
+
+/* --- Layer Logic & Depth --- */
+[data-layer="1"] { 
+  --radius: 130px; 
+  --scale: 0.9; 
+  --step: 72deg; 
+  z-index: 3; 
+}
+[data-layer="2"] { 
+  --radius: 260px; 
+  --scale: 1.15; 
+  --step: 30deg; 
+  z-index: 2; 
+}
+[data-layer="3"] { 
+  --radius: 410px; 
+  --scale: 1.5; 
+  --step: 15deg; 
+  z-index: 1; 
+}
+
+.petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform-origin: center;
+  animation: resort-bloom 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i) * 0.04s);
+}
+
+.petal-card {
+  width: 140px;
+  height: 185px;
+  /* Elegant, elongated leaf shape */
+  border-radius: 70% 70% 45% 45% / 100% 100% 25% 25%; 
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  background: #000;
+  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  /* Dimmed unhovered state to emphasize the 'Active' petal */
+  filter: brightness(0.7) sepia(20%); 
+}
+
+.petal-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s ease;
+}
+
+/* --- THE BLOOM ANIMATION --- */
+@keyframes resort-bloom {
+  0% { 
+    transform: translate(-50%, -50%) rotate(0deg) scale(0); 
+    opacity: 0; 
+    filter: blur(10px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translate(-50%, -50%) 
+               rotate(calc(var(--i) * var(--step))) 
+               translateY(calc(-1 * var(--radius))) 
+               scale(var(--scale)); 
+  }
+}
+
+/* --- LUXURY HOVER INTERACTION --- */
+.petal:hover { z-index: 100; }
+
+.petal:hover .petal-card {
+  /* Counter-rotate to bring the image to 0 degrees for viewing */
+  transform: rotate(calc(var(--i) * var(--step) * -1)) scale(1.65);
+  border-color: var(--gold-metallic);
+  filter: brightness(1.1) sepia(0%);
+  box-shadow: 0 0 45px var(--gold-glow);
+  cursor: pointer;
+}
+
+.petal:hover img { 
+  transform: scale(1.15); 
+}
+
+/* Glowing Center Piece (The Sun of the Resort) */
+.mandala-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(
+    circle, 
+    var(--ivory-accent) 0%, 
+    var(--gold-metallic) 50%, 
+    transparent 100%
+  );
+  border-radius: 50%;
+  filter: blur(12px);
+  z-index: 5;
+  box-shadow: 0 0 30px var(--gold-glow);
+}

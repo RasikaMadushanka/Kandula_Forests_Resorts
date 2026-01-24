@@ -1,1 +1,43 @@
-<p>nav-bar works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom py-3">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="assets/logo-elephant.png" alt="Logo" width="45" class="me-2">
+      <div class="lh-1">
+        <span class="fw-bold d-block mb-0 h6">KANDULA FORESTS</span>
+        <small class="text-uppercase" style="font-size: 9px; letter-spacing: 1px;">Safari & Resort</small>
+      </div>
+    </a>
+
+    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" [class.show]="!isMenuCollapsed" id="mainNav">
+      <ul class="navbar-nav ms-auto gap-lg-4 fw-medium">
+        <li class="nav-item"><a class="nav-link text-uppercase" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-uppercase" href="#">Service</a></li>
+        
+        <li class="nav-item dropdown" 
+            (mouseenter)="isActivitiesOpen = true" 
+            (mouseleave)="isActivitiesOpen = false">
+          <a class="nav-link dropdown-toggle text-uppercase" 
+             href="javascript:void(0)" 
+             (click)="isActivitiesOpen = !isActivitiesOpen">
+            Activities & Games
+          </a>
+          <ul class="dropdown-menu border-0 shadow-sm" [class.show]="isActivitiesOpen">
+            <li><a class="dropdown-item" href="#">Safari Tours</a></li>
+            <li><a class="dropdown-item" href="#">Bird Watching</a></li>
+            <li><a class="dropdown-item" href="#">Night Camping</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">View All Activities</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link text-uppercase" href="#">Food Rental</a></li>
+        <li class="nav-item"><a class="nav-link text-uppercase" href="#">Car Ren</a></li>
+        <li class="nav-item"><a class="nav-link text-uppercase" href="#">Rooms</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
