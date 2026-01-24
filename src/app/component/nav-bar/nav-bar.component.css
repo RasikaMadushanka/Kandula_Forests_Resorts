@@ -1,0 +1,76 @@
+/* --- THEME COLORS --- */
+.navbar-custom {
+    background-color: #2d4638 !important; /* Kandula Green */
+    border-bottom: 2px solid #c5a059;     /* Earthy Gold accent */
+}
+
+/* Brand Text */
+.navbar-custom .navbar-brand span {
+    color: #e9e5d7 !important;           /* Soft Cream */
+    letter-spacing: 1px;
+}
+.navbar-custom .navbar-brand small {
+    color: #c5a059 !important;
+}
+
+/* Link Styling */
+.navbar-custom .nav-link {
+    color: #e9e5d7 !important;
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #c5a059 !important;
+}
+
+/* Dropdown Menu Styling */
+.navbar-custom .dropdown-menu {
+    background-color: #1e3127;           /* Deep dark green */
+    border: 1px solid #c5a059;
+    border-radius: 0;
+}
+
+.navbar-custom .dropdown-item {
+    color: #e9e5d7;
+    font-size: 0.8rem;
+    padding: 10px 20px;
+}
+
+.navbar-custom .dropdown-item:hover {
+    background-color: #2d4638;
+    color: #ffffff;
+}
+
+/* --- ANGULAR RESPONSIVENESS LOGIC --- */
+
+/* Force menu to display when Angular toggles 'show' class */
+.collapse.navbar-collapse.show {
+    display: block !important;
+}
+
+.dropdown-menu.show {
+    display: block !important;
+    margin-top: 5px;
+}
+
+/* Mobile Toggler Customization */
+.navbar-custom .navbar-toggler {
+    border-color: #e9e5d7;
+}
+
+.navbar-custom .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23e9e5d7' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+    .dropdown-menu {
+        background-color: rgba(0,0,0,0.2) !important;
+        border: none;
+        padding-left: 1.5rem;
+    }
+}
