@@ -1,0 +1,46 @@
+/* 1. The Gradient Text Effect */
+.text-gradient {
+  background: linear-gradient(45deg, #66626b, #cec0c0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 2. Floating Animation for the Image */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.creative-img {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic shape */
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+  animation: float 6s ease-in-out infinite;
+  transition: all 0.5s ease;
+}
+
+.creative-img:hover {
+  border-radius: 20%; /* Smoothly squares up on hover */
+  transform: scale(1.05);
+}
+
+/* 3. Glassmorphism Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px); /* Blurs the background behind it */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  margin-left: -50px; /* Overlaps image slightly for depth */
+  z-index: 2;
+}
+
+
+
+/* Mobile Fix: Remove the overlap on small screens */
+@media (max-width: 768px) {
+  .glass-card {
+    margin-left: 0;
+    margin-top: -30px;
+  }
+}
