@@ -1,0 +1,90 @@
+.half-height-bg {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+   url('/assets/images/bk1.jpeg');
+  
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: #f8f9fa; 
+  padding-bottom: 100px;
+}
+
+.big-card {
+  border: none;
+  border-radius: 25px; /* Softer rounded corners for larger cards */
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  transition: transform 0.4s ease;
+}
+
+.big-card:hover {
+  transform: translateY(-12px);
+}
+
+.card-img-top {
+  height: 350px; /* Taller images for wider cards */
+  object-fit: cover;
+}
+
+/* Make the button look more premium */
+.btn-primary {
+  background-color: #0d6efd;
+  border-radius: 50px; /* Pill shape */
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  letter-spacing: 1px;
+}
+.btn-pro {
+  /* Typography */
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #000000; /* Your primary color */
+  
+  /* Layout & Shape */
+  display: inline-block;
+  padding: 12px 35px;
+  cursor: pointer;
+  background: transparent; /* No background color */
+  
+  /* The "Charm" Border */
+  border: 2px solid #b5cb35;
+  border-radius: 4px; /* Slight roundness is more professional than a circle */
+  
+  /* Animation */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* The Hover Charm (Fill Animation) */
+.btn-pro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0; /* Starts empty */
+  height: 100%;
+  background-color: #50ab3a;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.btn-pro:hover {
+  color: #fff; /* Text turns white when filled */
+}
+
+.btn-pro:hover::before {
+  width: 100%; /* Fills up on hover */
+}
+
+/* Active State */
+.btn-pro:active {
+  transform: scale(0.95);
+}
