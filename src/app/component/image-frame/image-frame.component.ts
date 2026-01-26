@@ -13,10 +13,30 @@ export class ImageFrameComponent implements OnInit {
 
   // Your resort images list
   private rawImages = [
-   { url: 'assets/images/en1.jpeg', type: 'type-a' },
+    { url: 'assets/images/en1.jpeg', type: 'type-a' },
     { url: 'assets/images/en2.jpeg', type: 'type-b' },
     { url: 'assets/images/en3.jpeg', type: 'type-a' },
     { url: 'assets/images/en4.jpeg', type: 'type-b' },
+    { url: 'assets/images/en5.jpeg', type: 'type-a' },
+    { url: 'assets/images/en6.jpeg', type: 'type-b' },
+    { url: 'assets/images/en7.jpeg', type: 'type-a' },
+    { url: 'assets/images/en8.jpeg', type: 'type-b' },
+    { url: 'assets/images/en9.jpeg', type: 'type-a' },
+    { url: 'assets/images/en10.jpeg', type: 'type-b' },
+    { url: 'assets/images/en11.jpeg', type: 'type-a' },
+    { url: 'assets/images/en12.jpeg', type: 'type-b' },
+    { url: 'assets/images/en13.jpeg', type: 'type-a' },
+    { url: 'assets/images/en14.jpeg', type: 'type-b' },
+    { url: 'assets/images/en15.jpeg', type: 'type-a' },
+    { url: 'assets/images/en16.jpeg', type: 'type-b' },
+    { url: 'assets/images/en1.jpeg', type: 'type-a' },
+    { url: 'assets/images/en2.jpeg', type: 'type-b' },
+    { url: 'assets/images/en3.jpeg', type: 'type-a' },
+    { url: 'assets/images/en4.jpeg', type: 'type-b' },
+    { url: 'assets/images/en1.jpeg', type: 'type-a' },
+    { url: 'assets/images/en2.jpeg', type: 'type-b' },
+    { url: 'assets/images/en3.jpeg', type: 'type-a' },
+    { url: 'assets/images/en4.jpeg', type: 'type-b' }
   ];
 
   ngOnInit() {
@@ -28,8 +48,8 @@ export class ImageFrameComponent implements OnInit {
   }
 
   getLayer(index: number): string {
-    if (index < 5) return '1';   
-    if (index < 17) return '2';  
-    return '3';                  
+    if (index < 5) return '1';
+    if (index < 17) return '2';
+    return '3';
   }
 }

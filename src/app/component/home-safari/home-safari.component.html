@@ -1,1 +1,64 @@
-<p>home-safari works!</p>
+<div class="safari-container">
+  <h2 class="title">Safari Experience</h2>
+
+  <div class="bento-grid">
+
+    <!-- BIG CARD -->
+    <div class="card big">
+      <div class="slider-track">
+        <img *ngFor="let item of safariimages" [src]="item.url" [alt]="item.title">
+      </div>
+
+      <div class="card-info">
+        <span class="tag">Featured</span>
+        <h3>Wild Safari</h3>
+        <button class="view-btn">View More</button>
+      </div>
+    </div>
+
+    <!-- SIDE GRID -->
+    <div class="side-grid">
+
+      <div class="card small">
+        <div class="slider-track">
+          <img *ngFor="let item of activities" [src]="item.url" [alt]="item.title">
+        </div>
+        <div class="card-info">
+          <h3>Activities</h3>
+          <button class="view-btn">View More</button>
+        </div>
+      </div>
+
+      <div class="card small">
+        <div class="slider-track">
+          <img *ngFor="let item of restaurent" [src]="item.url" [alt]="item.title">
+        </div>
+        <div class="card-info">
+          <h3>Dining</h3>
+          <button class="view-btn">View More</button>
+        </div>
+      </div>
+
+      <div class="card small">
+        <div class="slider-track">
+          <img *ngFor="let item of garden" [src]="item.url" [alt]="item.title">
+        </div>
+        <div class="card-info">
+          <h3>Garden</h3>
+          <button class="view-btn">View More</button>
+        </div>
+      </div>
+
+      <div class="card small">
+        <div class="slider-track">
+          <img *ngFor="let item of wildlife" [src]="item.url" [alt]="item.title">
+        </div>
+        <div class="card-info">
+          <h3>Wildlife</h3>
+          <button class="view-btn">View More</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

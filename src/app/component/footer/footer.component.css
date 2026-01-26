@@ -1,0 +1,127 @@
+/* Color Palette */
+:host {
+    --forest-bg: #0B140F;
+    --gold: #C29B40;
+    --beige: #F5F5DC;
+    --text-dim: rgba(245, 245, 220, 0.6);
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.kandula-footer {
+    background-color: var(--forest-bg);
+    color: var(--beige);
+    padding: 80px 0 30px 0;
+    font-family: 'Inter', sans-serif;
+    border-top: 4px solid var(--gold);
+}
+
+/* Logo Styling */
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.logo-text span {
+    color: var(--gold);
+    font-weight: 400;
+}
+
+.brand-description {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+    margin-bottom: 30px;
+}
+
+/* Social Icons */
+.social-box { display: flex; gap: 12px; }
+
+.social-link {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(194, 155, 64, 0.3);
+    color: var(--beige);
+    border-radius: 50%;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background-color: var(--gold);
+    color: var(--forest-bg);
+    transform: translateY(-5px);
+}
+
+/* Navigation */
+.footer-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.footer-links li { margin-bottom: 10px; }
+
+.footer-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+    transform: translateX(8px);
+}
+
+/* Newsletter - Glassmorphism touch */
+.newsletter-group {
+    display: flex;
+    border-bottom: 1px solid rgba(194, 155, 64, 0.5);
+    padding-bottom: 5px;
+}
+
+.newsletter-group input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    width: 100%;
+    outline: none;
+}
+
+.newsletter-group button {
+    background: transparent;
+    border: none;
+    color: var(--gold);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    border-top: 1px solid rgba(245, 245, 220, 0.1);
+}
+
+.copyright { font-size: 0.8rem; color: var(--text-dim); }
+
+.legal-links a {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+/* Responsive Logic */
+@media (max-width: 991px) {
+    .kandula-footer { text-align: center; }
+    .social-box { justify-content: center; margin-bottom: 30px; }
+    .newsletter-group { max-width: 300px; margin: 0 auto; }
+}

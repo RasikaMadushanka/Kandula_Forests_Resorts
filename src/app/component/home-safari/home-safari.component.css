@@ -1,0 +1,170 @@
+:root {
+  --accent: #ff7e5f;
+}
+
+/* 🌍 FULL WIDTH CONTAINER */
+.safari-container {
+  width: 100%;
+  padding: 40px 40px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+/* 🔹 MAIN GRID */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+/* 🔹 SIDE GRID */
+.side-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* 🔹 CARD BASE */
+.card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HEIGHT SYSTEM */
+.card.big {
+  height: 520px;
+}
+
+.card.small {
+  height: 250px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+
+/* 🔹 IMAGE SLIDER */
+.slider-track {
+  display: flex;
+  height: 100%;
+  width: 300%;
+  animation: slideLoop 8s infinite ease-in-out;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* SLIDER ANIMATION */
+@keyframes slideLoop {
+  0%, 30%   { transform: translateX(0); }
+  35%, 65%  { transform: translateX(-33.33%); }
+  70%, 100% { transform: translateX(-66.66%); }
+}
+
+/* 🔹 INFO OVERLAY */
+.card-info {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  padding: 12px 14px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  color: #fff;
+}
+
+/* TEXT */
+.tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.card-info h3 {
+  margin: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.card.big h3 {
+  font-size: 1.6rem;
+}
+
+/* 🔘 VIEW MORE BUTTON */
+.view-btn {
+  margin-top: 10px;
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.6);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.3s ease;
+}
+
+/* SHOW BUTTON ON HOVER */
+.card:hover .view-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.view-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+}
+
+/* 📱 TABLET */
+@media (max-width: 992px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card.big {
+    height: 380px;
+  }
+
+  .card.small {
+    height: 220px;
+  }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 576px) {
+  .side-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card.big,
+  .card.small {
+    height: 240px;
+  }
+
+  .view-btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
