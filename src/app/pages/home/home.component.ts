@@ -4,11 +4,12 @@ import { ImageFrameComponent } from "../../component/image-frame/image-frame.com
 import { OverviewComponent } from "../../component/overview/overview.component";
 import { HomeRoomsComponent } from '../../component/home-rooms/home-rooms.component';
 import { HomeSafariComponent } from '../../component/home-safari/home-safari.component';
+import { FooterComponent } from '../../component/footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavBarComponent, ImageFrameComponent, OverviewComponent,HomeRoomsComponent,HomeSafariComponent],
+  imports: [NavBarComponent, ImageFrameComponent, OverviewComponent,HomeRoomsComponent,HomeSafariComponent,FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
