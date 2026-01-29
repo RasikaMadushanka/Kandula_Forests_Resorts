@@ -1,1 +1,42 @@
-<p>review works!</p>
+<section class="review-marquee-section">
+    <div class="container text-center mb-5">
+        <h2 class="section-title">Voices of the Wild</h2>
+        <div class="title-underline"></div>
+    </div>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <div class="review-card-mini" *ngFor="let review of reviews">
+                <div class="guest-header">
+                    <div class="img-ring">
+                        <img [src]="review.image" [alt]="review.name" class="guest-img">
+                    </div>
+                    <div class="guest-info">
+                        <h6>{{ review.name }}</h6>
+                        <span>{{ review.location }}</span>
+                    </div>
+                </div>
+                <p class="review-para">"{{ review.text }}"</p>
+                <div class="stars">
+                    <i class="fas fa-star" *ngFor="let s of stars"></i>
+                </div>
+            </div>
+            
+            <div class="review-card-mini" *ngFor="let review of reviews">
+                <div class="guest-header">
+                    <div class="img-ring">
+                        <img [src]="review.image" [alt]="review.name" class="guest-img">
+                    </div>
+                    <div class="guest-info">
+                        <h6>{{ review.name }}</h6>
+                        <span>{{ review.location }}</span>
+                    </div>
+                </div>
+                <p class="review-para">"{{ review.text }}"</p>
+                <div class="stars">
+                    <i class="fas fa-star" *ngFor="let s of stars"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
