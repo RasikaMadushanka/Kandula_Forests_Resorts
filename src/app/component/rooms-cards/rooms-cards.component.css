@@ -1,29 +1,81 @@
+/* ================= Room Card ================= */
 .room-card {
   background: #fff;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .room-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
-.room-card img {
+/* ================= Image Slider ================= */
+.image-wrapper {
+  position: relative;
   width: 100%;
   height: 220px;
-  object-fit: cover;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
 }
 
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* ================= Arrows ================= */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.35), rgba(0,0,0,0.6));
+  border: none;
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.arrow:hover {
+  background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.85));
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+}
+
+.arrow.prev {
+  left: 10px;
+}
+
+.arrow.next {
+  right: 10px;
+}
+
+/* ================= Room Body ================= */
 .room-body {
   padding: 20px;
 }
 
 .room-body h4 {
   font-weight: 700;
-  margin-bottom: 8px;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #222;
 }
 
 .badge {
@@ -32,6 +84,7 @@
   border-radius: 20px;
   font-size: 0.85rem;
   margin-bottom: 12px;
+  font-weight: 600;
 }
 
 .badge.ac {
@@ -48,17 +101,21 @@
   font-size: 0.95rem;
   color: #555;
   margin-bottom: 16px;
+  min-height: 50px;
 }
 
+/* ================= Price Box ================= */
 .price-box {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 8px;
 }
 
 .old-price {
   text-decoration: line-through;
   color: #999;
+  font-weight: 500;
 }
 
 .discount {
@@ -67,13 +124,14 @@
 }
 
 .final-price {
-  margin-top: 8px;
   font-size: 1.3rem;
   font-weight: 700;
   color: #2e7d32;
+  margin-bottom: 12px;
 }
+
+/* ================= View Button ================= */
 .view-btn {
-  margin-top: 16px;
   width: 100%;
   padding: 12px;
   border-radius: 10px;
@@ -88,4 +146,31 @@
 .view-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 992px) {
+  .image-wrapper {
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-wrapper {
+    height: 180px;
+  }
+
+  .arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+
+  .room-body h4 {
+    font-size: 1.1rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
 }
