@@ -6,11 +6,12 @@ import { HomeRoomsComponent } from '../../component/home-rooms/home-rooms.compon
 import { HomeSafariComponent } from '../../component/home-safari/home-safari.component';
 import { FooterComponent } from '../../component/footer/footer.component';
 import { ReviewComponent } from "../../component/review/review.component";
+import { RoomsImageshowComponent } from "../../component/rooms-imageshow/rooms-imageshow.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavBarComponent, ImageFrameComponent, OverviewComponent, HomeRoomsComponent, HomeSafariComponent, FooterComponent, ReviewComponent,ReviewComponent],
+  imports: [NavBarComponent, ImageFrameComponent, OverviewComponent, HomeRoomsComponent, HomeSafariComponent, FooterComponent, ReviewComponent, ReviewComponent, RoomsImageshowComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
