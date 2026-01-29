@@ -1,108 +1,142 @@
-  .image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    /* set fixed height so images are visible */
-    overflow: hidden;
-  }
-    .image-wrapper .responsive-text {
-    position: relative;
-    z-index: 2;
-    /* text stays on top */
-  }
+/* ===============================
+   HERO SLIDESHOW CONTAINER
+================================ */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  min-height: 480px;
+  max-height: 800px;
+  overflow: hidden;
+  border-radius: 14px;
+}
 
+/* Dark overlay for readability */
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.55)
+  );
+  z-index: 1;
+}
 
-  /* ✅ Slideshow images */
-  .image-wrapper img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* ===============================
+   SLIDESHOW IMAGES
+================================ */
+.image-wrapper img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.08);
+  animation: slideFade 20s infinite ease-in-out;
+}
+
+/* ===============================
+   CENTER TEXT
+================================ */
+.responsive-text {
+  position: absolute;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.responsive-text h1 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.responsive-text p {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  opacity: 0.9;
+  letter-spacing: 0.3px;
+}
+
+/* ===============================
+   LOGO BADGE
+================================ */
+.hero-logo {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  z-index: 3;
+  padding: 12px 18px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-logo img {
+  width: 220px;
+  max-width: 60vw;
+  height: auto;
+  display: block;
+}
+
+/* Subtle hover lift */
+.hero-logo:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.55);
+}
+
+/* ===============================
+   ANIMATION
+================================ */
+@keyframes slideFade {
+  0% {
     opacity: 0;
-    animation: fadeSlide 20s infinite;
-    z-index: 0;
+    transform: scale(1.08);
+  }
+  8% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  35% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .image-wrapper {
+    height: 65vh;
   }
 
-
-  /* ✅ Animate images one after the other */
-  .image-wrapper img:nth-of-type(1) {
-    animation-delay: 0s;
+  .responsive-text h1 {
+    font-size: 2rem;
   }
 
-  .image-wrapper img:nth-of-type(2) {
-    animation-delay: 5s;
+  .responsive-text p {
+    font-size: 1rem;
   }
 
-  .image-wrapper img:nth-of-type(3) {
-    animation-delay: 10s;
+  .hero-logo {
+    bottom: 18px;
+    left: 18px;
+    padding: 10px 14px;
   }
 
-  .image-wrapper img:nth-of-type(4) {
-    animation-delay: 15s;
+  .hero-logo img {
+    width: 160px;
   }
-  .image-wrapper img:nth-of-type(5) {
-    animation-delay: 20s;
-  }
-
-  .image-wrapper img:nth-of-type(6) {
-    animation-delay: 25s;
-  }
-
-  .image-wrapper img:nth-of-type(7) {
-    animation-delay: 30s;
-  }
-
-  .image-wrapper img:nth-of-type(8) {
-    animation-delay: 35s;
-  }
-  .image-wrapper img:nth-of-type(9) {
-    animation-delay: 40s;
-  }
-
-  .image-wrapper img:nth-of-type(10) {
-    animation-delay: 45s;
-  }
-
-  .image-wrapper img:nth-of-type(11) {
-    animation-delay: 50s;
-  }
-
-  .image-wrapper img:nth-of-type(12) {
-    animation-delay: 55s;
-  }
-  .image-wrapper img:nth-of-type(13) {
-    animation-delay: 60s;
-  }
-
-  .image-wrapper img:nth-of-type(14) {
-    animation-delay: 65s;
-  }
-
-  .image-wrapper img:nth-of-type(15) {
-    animation-delay: 70s;
-  }
-
-  /* ✅ Fade animation */
-  @keyframes fadeSlide {
-    0% {
-      opacity: 0;
-    }
-
-    5% {
-      opacity: 1;
-    }
-
-    25% {
-      opacity: 1;
-    }
-
-    30% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 0;
-    }
-  }
+}
