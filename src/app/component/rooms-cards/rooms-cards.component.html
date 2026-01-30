@@ -1,0 +1,94 @@
+<div class="container py-5">
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let room of rooms">
+      <div class="room-card h-100">
+
+        <!-- Image slider -->
+        <div class="image-wrapper">
+          <img [src]="room.image[room.currentImage!]" [alt]="room.type" />
+
+          <!-- Navigation arrows -->
+          <button class="arrow prev" (click)="prevImage(room)">&#10094;</button>
+          <button class="arrow next" (click)="nextImage(room)">&#10095;</button>
+        </div>
+
+        <!-- Room details -->
+        <div class="room-body">
+          <h4>{{ room.type }}</h4>
+          <span class="badge" [class.ac]="room.ac" [class.non-ac]="!room.ac">
+            {{ room.ac ? 'AC Room' : 'Non AC Room' }}
+          </span>
+          <p class="desc">{{ room.description }}</p>
+
+          <div class="price-box">
+            <span class="old-price">LKR {{ room.price | number }}</span>
+            <span class="discount">-{{ room.discount }}%</span>
+          </div>
+
+          <div class="final-price">
+            LKR {{ getFinalPrice(room) | number }}
+          </div>
+
+          <button class="view-btn" [routerLink]="['/rooms-details', room.id]">
+            View More
+          </button>
+        </div>
+
+      </div>
+    </div>
+    <div class="container py-4">
+  <div class="row g-4">
+
+    <div class="col-lg-3 col-md-6 col-12">
+      <div class="image-card">
+        <img src="assets/images/r2.jpeg" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-12">
+      <div class="image-card">
+        <img src="assets/images/r2.jpeg" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-12">
+      <div class="image-card">
+        <img src="assets/images/r2.jpeg" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-12">
+      <div class="image-card">
+        <img src="assets/images/r2.jpeg" alt="">
+      </div>
+    </div>
+
+     <div class="col-lg-3 col-md-6 col-12">
+      <div class="image-card">
+        <img src="assets/images/r2.jpeg" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-12">
+      <div class="image-card">
+        <img src="assets/images/r2.jpeg" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-12">
+      <div class="image-card">
+        <img src="assets/images/r2.jpeg" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-12">
+      <div class="image-card">
+        <img src="assets/images/r2.jpeg" alt="">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  </div>
+</div>

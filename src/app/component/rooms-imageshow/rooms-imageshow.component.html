@@ -1,0 +1,15 @@
+<div class="container-fluid py-5 position-relative">
+    <div class="image-wrapper">
+
+        <img *ngFor="let img of images; let i = index" [src]="img" class="img-fluid w-100"
+            [style.animationDelay]="(i * 5) + 's'" />
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white responsive-text">
+            <h1>Welcome to Kandula Forest Resort</h1>
+            <p>Discover Authentic Sri Lanka</p>
+        </div>
+        <div class="hero-logo">
+            <img src="assets/images/r2.jpeg" alt="Kandula Forest Resort Logo">
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,112 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container py-5">
+  <div class="room-page">
+
+    <!-- Left side: Room Details & Images -->
+    <div class="room-left">
+      <div class="room-details-card">
+
+        <!-- Main Image Slider -->
+        <div class="image-slider">
+          <img [src]="room.images[currentImageIndex]" [alt]="room.type" class="main-image" />
+          <button class="arrow prev" (click)="prevImage()">&#10094;</button>
+          <button class="arrow next" (click)="nextImage()">&#10095;</button>
+        </div>
+
+        <!-- Thumbnail Strip -->
+        <div class="thumbnail-strip">
+          <img *ngFor="let img of room.images; let i = index" [src]="img" [alt]="room.type + ' image ' + (i+1)"
+            [class.active]="i === currentImageIndex" (click)="selectImage(i)" />
+        </div>
+
+        <!-- Room Info -->
+        <div class="room-info">
+          <h2>{{ room.type }}</h2>
+          <span class="badge" [class.ac]="room.ac" [class.non-ac]="!room.ac">
+            {{ room.ac ? 'AC Room' : 'Non AC Room' }}
+          </span>
+
+          <p class="description">{{ room.description }}</p>
+
+          <div class="price-section">
+            <span class="old-price">LKR {{ room.price | number }}</span>
+            <span class="discount">-{{ room.discount }}%</span>
+            <div class="final-price">
+              LKR {{ getFinalPrice() | number }}
+            </div>
+          </div>
+
+          <!-- Room Features -->
+          <div class="features">
+            <h5>Room Features:</h5>
+            <ul>
+              <li *ngFor="let feature of room.features">
+                <span class="feature-icon">&#10003;</span> {{ feature }}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right side: Booking Form -->
+    <div class="room-right">
+      <div class="booking-form">
+        <h3>Room Booking</h3>
+
+        <form (ngSubmit)="sendWhatsApp()" #bookingForm="ngForm">
+
+          <!-- Name -->
+          <input type="text" placeholder="Full Name" [(ngModel)]="booking.name" name="name" required>
+
+          <!-- Email -->
+          <input type="email" placeholder="Email Address" [(ngModel)]="booking.email" name="email" required>
+
+          <!-- Contact Number -->
+          <input type="tel" placeholder="Contact Number" [(ngModel)]="booking.phone" name="phone" required>
+
+          <!-- Country Dropdown -->
+          <select [(ngModel)]="booking.country" name="country" required>
+            <option value="">Select Country</option>
+            <option *ngFor="let country of countries" [value]="country">
+              {{ country }}
+            </option>
+          </select>
+
+          <!-- Room Type Dropdown -->
+          <select [(ngModel)]="booking.roomType" name="roomType" required>
+            <option value="">Select Room Type</option>
+            <option>Deluxe Room</option>
+            <option>Family Room</option>
+            <option>Triple Room</option>
+          </select>
+
+          <!-- Check-in Date -->
+          <input type="date" [(ngModel)]="booking.checkinDate" name="checkinDate" required>
+
+      
+          <!-- Check-out Date -->
+          <input type="date" [(ngModel)]="booking.checkoutDate" name="checkoutDate" required>
+
+          
+
+
+          <!-- Notes -->
+          <textarea placeholder="Special Notes (Optional)" [(ngModel)]="booking.notes" name="notes"></textarea>
+
+          <button type="submit" class="whatsapp-btn" [disabled]="bookingForm.invalid">
+            Send Booking via WhatsApp
+          </button>
+
+
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<app-footer></app-footer>
