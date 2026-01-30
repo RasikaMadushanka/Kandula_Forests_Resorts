@@ -54,46 +54,7 @@ export class RoomsCardsComponent {
         'assets/images/r2.jpeg'
 
       ],
-      type: 'Triple Room',
-      ac: true,
-      price: 22000,
-      discount: 5,
-      description: 'Comfortable triple room with modern amenities, suitable for small groups and friends.',
-      currentImage: 0
-    },
-     {
-      id:4,
-      image:[ 'assets/images/r2.jpeg',
-        'assets/images/r2.jpeg'
-
-      ],
-      type: 'Couple Room',
-      ac: true,
-      price: 18000,
-      discount: 10,
-      description: 'A cozy and romantic space surrounded by nature, perfect for couples seeking comfort and privacy.',
-      currentImage: 0
-    },
-    {
-      id:5,
-      image:[ 'assets/images/r2.jpeg',
-        'assets/images/r2.jpeg'
-
-      ],
-      type: 'Family Room',
-      ac: false,
-      price: 25000,
-      discount: 15,
-      description: 'Spacious room ideal for families, offering peaceful forest views and natural ventilation.',
-      currentImage: 0
-    },
-    {
-      id:6,
-      image:[ 'assets/images/r2.jpeg',
-        'assets/images/r2.jpeg'
-
-      ],
-      type: 'Triple Room',
+      type: 'Deluxe Room',
       ac: true,
       price: 22000,
       discount: 5,
