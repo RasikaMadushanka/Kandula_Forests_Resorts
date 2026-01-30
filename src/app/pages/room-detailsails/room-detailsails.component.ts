@@ -34,22 +34,33 @@ interface Booking {
   styleUrls: ['./room-detailsails.component.css']
 })
 export class RoomDetailsailsComponent {
-  
-
-  
   roomId!: number;
   room!: RoomDetails;
   currentImageIndex: number = 0;
 
-   booking: Booking = {
-    name: '',
-    email: '',
-    phone: '',
-    guests: 1,
-    checkin: '',
-    checkout: '',
-    notes: ''
-  };
+   booking = {
+  name: '',
+  email: '',
+  phone: '',
+  country: '',
+  roomType: '',
+  checkinDate: '',
+  checkoutDate: '',
+  notes: ''
+};
+
+countries = [
+  'Sri Lanka',
+  'India',
+  'United Kingdom',
+  'Australia',
+  'Canada',
+  'Germany',
+  'France',
+  'China',
+  'Japan',
+  'Other'
+];
 
   rooms: RoomDetails[] = [
     {
@@ -153,24 +164,30 @@ export class RoomDetailsailsComponent {
   // room-detailsails.component.ts
 
 sendWhatsApp() {
-  // Construct message
-  const message = `Hello, I would like to book the ${this.room.type}.\n
+
+  const message = `Hello, I would like to book a room.
+
 Name: ${this.booking.name}
 Email: ${this.booking.email}
 Phone: ${this.booking.phone}
-Guests: ${this.booking.guests}
-Check-in: ${this.booking.checkin}
-Check-out: ${this.booking.checkout}
-Notes: ${this.booking.notes}`;
+Country: ${this.booking.country}
+Room Type: ${this.booking.roomType}
+checkinDate: ${this.booking.checkinDate}
+checkoutDate: ${this.booking.checkoutDate}
 
-  // Encode message for URL
+
+Notes: ${this.booking.notes || 'None'}
+`;
+
   const encodedMessage = encodeURIComponent(message);
 
-  // WhatsApp number (replace with your number in international format, without +)
-  const whatsappNumber = '947XXXXXXXX'; 
+  const whatsappNumber = '94760374379';
 
-  // Open WhatsApp
-  window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+  window.open(
+    `https://wa.me/${whatsappNumber}?text=${encodedMessage}`,
+    '_blank'
+  );
 }
+
 
 }

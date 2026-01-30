@@ -16,13 +16,8 @@
 
         <!-- Thumbnail Strip -->
         <div class="thumbnail-strip">
-          <img 
-            *ngFor="let img of room.images; let i = index" 
-            [src]="img" 
-            [alt]="room.type + ' image ' + (i+1)" 
-            [class.active]="i === currentImageIndex"
-            (click)="selectImage(i)"
-          />
+          <img *ngFor="let img of room.images; let i = index" [src]="img" [alt]="room.type + ' image ' + (i+1)"
+            [class.active]="i === currentImageIndex" (click)="selectImage(i)" />
         </div>
 
         <!-- Room Info -->
@@ -59,21 +54,57 @@
     <!-- Right side: Booking Form -->
     <div class="room-right">
       <div class="booking-form">
-        <h3>Book this room</h3>
-        <form (ngSubmit)="sendWhatsApp()">
+        <h3>Room Booking</h3>
 
-          <input type="text" placeholder="Name" [(ngModel)]="booking.name" name="name" required>
-          <input type="email" placeholder="Email" [(ngModel)]="booking.email" name="email" required>
-          <input type="tel" placeholder="Phone" [(ngModel)]="booking.phone" name="phone" required>
-          <input type="number" placeholder="Guests" [(ngModel)]="booking.guests" name="guests" min="1" required>
-          <input type="date" placeholder="Check-in" [(ngModel)]="booking.checkin" name="checkin" required>
-          <input type="date" placeholder="Check-out" [(ngModel)]="booking.checkout" name="checkout" required>
-          <textarea placeholder="Notes" [(ngModel)]="booking.notes" name="notes"></textarea>
+        <form (ngSubmit)="sendWhatsApp()" #bookingForm="ngForm">
 
-          <button type="submit" class="whatsapp-btn">Send Booking via WhatsApp</button>
+          <!-- Name -->
+          <input type="text" placeholder="Full Name" [(ngModel)]="booking.name" name="name" required>
+
+          <!-- Email -->
+          <input type="email" placeholder="Email Address" [(ngModel)]="booking.email" name="email" required>
+
+          <!-- Contact Number -->
+          <input type="tel" placeholder="Contact Number" [(ngModel)]="booking.phone" name="phone" required>
+
+          <!-- Country Dropdown -->
+          <select [(ngModel)]="booking.country" name="country" required>
+            <option value="">Select Country</option>
+            <option *ngFor="let country of countries" [value]="country">
+              {{ country }}
+            </option>
+          </select>
+
+          <!-- Room Type Dropdown -->
+          <select [(ngModel)]="booking.roomType" name="roomType" required>
+            <option value="">Select Room Type</option>
+            <option>Deluxe Room</option>
+            <option>Family Room</option>
+            <option>Triple Room</option>
+          </select>
+
+          <!-- Check-in Date -->
+          <input type="date" [(ngModel)]="booking.checkinDate" name="checkinDate" required>
+
+      
+          <!-- Check-out Date -->
+          <input type="date" [(ngModel)]="booking.checkoutDate" name="checkoutDate" required>
+
+          
+
+
+          <!-- Notes -->
+          <textarea placeholder="Special Notes (Optional)" [(ngModel)]="booking.notes" name="notes"></textarea>
+
+          <button type="submit" class="whatsapp-btn" [disabled]="bookingForm.invalid">
+            Send Booking via WhatsApp
+          </button>
+
+
         </form>
       </div>
     </div>
+
 
   </div>
 </div>
