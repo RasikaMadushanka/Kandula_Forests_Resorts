@@ -1,18 +1,16 @@
-import { Component } from '@angular/core';
-import { NavBarComponent } from "../../component/nav-bar/nav-bar.component";
-import { FooterComponent } from "../../component/footer/footer.component";
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-contact-us',
+  selector: 'app-safari-contactus',
   standalone: true,
-  imports: [NavBarComponent, FooterComponent,CommonModule,FormsModule],
-  templateUrl: './contact-us.component.html',
-  styleUrl: './contact-us.component.css'
+  imports: [CommonModule,FormsModule],
+  templateUrl: './safari-contactus.component.html',
+  styleUrl: './safari-contactus.component.css'
 })
-export class ContactUsComponent {
- contact = {
+export class SafariContactusComponent {
+  contact = {
     name: '',
     email: '',
     country: '',
@@ -30,7 +28,7 @@ export class ContactUsComponent {
     }
 
     // 2. Build the message
-    const msg = `*NEW TOUR or Booking INQUIRY*%0A` +
+    const msg = `*NEW SafariBooking INQUIRY*%0A` +
                 `--------------------------%0A` +
                 `*Client:* ${this.contact.name}%0A` +
                 `*Email:* ${this.contact.email}%0A` +

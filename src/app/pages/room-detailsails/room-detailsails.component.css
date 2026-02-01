@@ -190,6 +190,51 @@
 .booking-form select {
   cursor: pointer;
 }
+.success-message {
+  background: #e7f9ed;
+  border: 1px solid #25D366;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  animation: fadeInDown 0.4s ease;
+}
+
+.icon-circle {
+  background: #25D366;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.text-content h4 {
+  margin: 0;
+  color: #128C7E;
+  font-size: 1rem;
+}
+
+.text-content p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Spinner styling */
+.fa-spin {
+  margin-left: 8px;
+}
 
 /* WhatsApp Button */
 .whatsapp-btn {

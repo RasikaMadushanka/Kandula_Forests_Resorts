@@ -177,32 +177,39 @@ countries = [
 
 
   // room-detailsails.component.ts
+// Inside your Component class
+showSuccess = false;
 
 sendWhatsApp() {
+  // 1. Show the success message UI
+  this.showSuccess = true;
 
-  const message = `Hello, I would like to book a room.
-
-Name: ${this.booking.name}
-Email: ${this.booking.email}
-Phone: ${this.booking.phone}
-Country: ${this.booking.country}
-Room Type: ${this.booking.roomType}
-checkinDate: ${this.booking.checkinDate}
-checkoutDate: ${this.booking.checkoutDate}
-
-
-Notes: ${this.booking.notes || 'None'}
-`;
-
-  const encodedMessage = encodeURIComponent(message);
+  // 2. Prepare the message
+  const message = `*NEW ROOM BOOKING*%0A` +
+                  `--------------------------%0A` +
+                  `*Name:* ${this.booking.name}%0A` +
+                  `*Email:* ${this.booking.email}%0A` +
+                  `*Phone:* ${this.booking.phone}%0A` +
+                  `*Country:* ${this.booking.country}%0A` +
+                  `*Room:* ${this.booking.roomType}%0A` +
+                  `*Dates:* ${this.booking.checkinDate} to ${this.booking.checkoutDate}%0A` +
+                  `*Notes:* ${this.booking.notes || 'None'}`;
 
   const whatsappNumber = '94760374379';
+  const waUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 
-  window.open(
-    `https://wa.me/${whatsappNumber}?text=${encodedMessage}`,
-    '_blank'
-  );
+  // 3. Wait 2 seconds so they see the success message, then redirect
+  setTimeout(() => {
+    window.open(waUrl, '_blank');
+    this.showSuccess = false; // Hide it after they leave
+    this.resetForm(); // Optional: Clear the form
+  }, 2000);
 }
 
-
+resetForm() {
+  this.booking = {
+    name: '', email: '', phone: '', country: '',
+    roomType: '', checkinDate: '', checkoutDate: '', notes: ''
+  };
+}
 }
