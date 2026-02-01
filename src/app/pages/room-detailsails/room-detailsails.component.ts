@@ -67,10 +67,15 @@ countries = [
       id: 1,
       type: 'Couple Room',
       images: [
-        'assets/images/r2.jpeg',
-        'assets/images/r3.jpeg',
-        'assets/images/r4.jpeg',
-        'assets/images/r11.jpeg'  // Add more images here
+        'assets/images/deulex21.jpeg',
+        'assets/images/deulex31.jpeg',
+        'assets/images/deulex15.jpeg',
+        'assets/images/deulex12.jpeg', 
+        'assets/images/washroom14.jpeg',
+        'assets/images/washroom17.jpeg',
+        'assets/images/washroom16.jpeg',
+          'assets/images/view.jpeg',
+        'assets/images/en21.jpeg'  // Add more images here
       ],
       ac: true,
       price: 18000,
@@ -83,10 +88,15 @@ countries = [
       id: 2,
       type: 'Family Room',
       images: [
-        'assets/images/r5.jpeg',
-        'assets/images/r6.jpeg',
-        'assets/images/r7.jpeg',
-        'assets/images/r12.jpeg'
+        'assets/images/froom14.jpeg',
+        'assets/images/froom20.jpeg',
+        'assets/images/froom27.jpeg',
+        'assets/images/froom51.jpeg', 
+        'assets/images/washroom24.jpeg',
+        'assets/images/washroom12.jpeg',
+        'assets/images/mirror.jpeg',
+          'assets/images/rdesign4.jpeg',
+        'assets/images/rdesign28.jpeg'  // Add more images here
       ],
       ac: false,
       price: 25000,
@@ -99,10 +109,15 @@ countries = [
       id: 3,
       type: 'Deluxe Room',
       images: [
-        'assets/images/r8.jpeg',
-        'assets/images/r9.jpeg',
-        'assets/images/r10.jpeg',
-        'assets/images/r13.jpeg'
+        'assets/images/deulex18.jpeg',
+        'assets/images/deulex12.jpeg',
+        'assets/images/deulex25.jpeg',
+        'assets/images/deulex30.jpeg', 
+        'assets/images/washroom24.jpeg',
+        'assets/images/washroom12.jpeg',
+        'assets/images/en3.jpeg',
+          'assets/images/rdesign4.jpeg',
+        'assets/images/rdesign28.jpeg'  // Add more images here
       ],
       ac: true,
       price: 22000,

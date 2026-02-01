@@ -68,22 +68,61 @@
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
 }
+/* Container for the logo and badge to keep them aligned */
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.brand-header {
+    display: flex;
+    flex-direction: column; /* Stack logo and badge for a cleaner large-scale look */
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 40px;
+}
 
 .floating-logo {
-    height: 60px;
-    margin-bottom: 20px;
-    animation: float 4s ease-in-out infinite;
+    /* Increased Size */
+    height: 200px; 
+    width: auto;
+    
+    /* Stronger 3D Effect for larger scale */
+    filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.15));
+    
+    /* Animation */
+    animation: gokoFloat 5s ease-in-out infinite;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.floating-logo:hover {
+    /* Dynamic hover for larger logo */
+    transform: scale(1.08) rotate(2deg);
+    filter: drop-shadow(0 15px 30px rgba(45, 90, 90, 0.5));
 }
 
 .badge {
-    background: #dcfce7;
-    color: #166534;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-left: 15px;
+    background: #ffc107; /* GOKO Gold */
+    color: #2d5a5a;    /* GOKO Teal */
+    padding: 8px 16px;
+    border-radius: 8px; /* Slightly sharper corners for a modern feel */
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
 }
+
+/* Enhanced Floating Animation */
+@keyframes gokoFloat {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
 
 .main-title {
     font-size: 3rem;
@@ -95,7 +134,7 @@
 
 .main-title span {
     background: linear-gradient(to right, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
+    /* -webkit-background-clip: text; */
     -webkit-text-fill-color: transparent;
 }
 
