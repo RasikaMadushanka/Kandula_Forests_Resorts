@@ -1,0 +1,149 @@
+:root {
+  /* Earthy, Luxury Safari Palette */
+  --accent: #c5a059; /* Elegant Gold */
+  --accent-soft: rgba(197, 160, 89, 0.2);
+  --bg-dark: #050a08; /* Deep Jungle Black */
+  --glass: rgba(255, 255, 255, 0.03);
+  --font-main: 'Inter', sans-serif;
+}
+
+.creative-video-wrap {
+  position: relative;
+  height: 100vh;
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px; /* Enables 3D depth for children */
+}
+
+/* The Creative Shape Mask - Refined Organic Edge */
+.video-mask {
+  position: relative;
+  width: 85%;
+  height: 80%;
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%); /* Angled parallel shape */
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 2;
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.8);
+}
+
+.video-mask:hover {
+  /* Dynamic expansion on hover */
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  width: 90%;
+  height: 85%;
+}
+
+.video-mask video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.1) brightness(0.9);
+  transform: scale(1.1); /* Pre-zoom for the hover effect */
+  transition: transform 1.2s ease;
+}
+
+.video-mask:hover video {
+  transform: scale(1); /* Smooth 'zoom out' to reveal more of the jungle */
+}
+
+/* Luxury Floating Card - Enhanced Glassmorphism */
+.floating-card {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 380px;
+  padding: 50px;
+  background: rgba(10, 15, 13, 0.6); /* Tinted glass */
+  backdrop-filter: blur(25px) saturate(150%);
+  -webkit-backdrop-filter: blur(25px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid var(--accent); /* Luxury accent bar */
+  border-radius: 4px; /* Sharp for professional look */
+  color: white;
+  z-index: 5;
+  box-shadow: 40px 40px 80px rgba(0,0,0,0.5);
+  animation: float 6s ease-in-out infinite;
+}
+
+/* The Text Enhancements */
+.tag {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.floating-card h2 {
+  font-size: 2.8rem;
+  line-height: 1;
+  font-family: 'Playfair Display', serif; /* Suggest adding this font */
+  margin-bottom: 20px;
+}
+
+.floating-card h2 span {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Button - The "Call to Action" */
+.cta-btn {
+  margin-top: 30px;
+  padding: 15px 40px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); /* Matches video shape */
+}
+
+.cta-btn:hover {
+  background: #fff;
+  color: var(--bg-dark);
+  transform: translateX(10px);
+}
+
+/* Background Decoration - Animated Blobs */
+.blob-shape {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+  filter: blur(120px);
+  top: -200px;
+  left: -100px;
+  z-index: 1;
+  animation: move 20s infinite alternate;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(1deg); }
+}
+
+@keyframes move {
+  from { transform: translate(0, 0); }
+  to { transform: translate(100px, 50px); }
+}
+
+/* Film Grain/Overlay Effect */
+.video-mask::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(5,10,8,0.6) 100%);
+  pointer-events: none;
+  z-index: 3;
+}

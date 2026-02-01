@@ -1,0 +1,471 @@
+.about-section {
+  background: linear-gradient(to bottom, #f7f9f8, #ffffff);
+}
+
+/* Main card */
+.about-card {
+  background: white;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background circle */
+.about-card::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #e8f3ee;
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+  z-index: 0;
+}
+
+/* Image wrapper */
+.about-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.about-image-wrapper img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.about-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* Content */
+.about-content {
+  position: relative;
+  z-index: 1;
+}
+
+.about-tag {
+  display: inline-block;
+  background: #e8f3ee;
+  color: #2c6b4f;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.about-content h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Button */
+.about-btn {
+  background: #2c6b4f;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.about-btn:hover {
+  background: #1f4d38;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-card {
+    padding: 30px;
+  }
+
+  .about-image-wrapper img {
+    height: 300px;
+  }
+}
+/* why chosse us */
+.why-section {
+  background: #f7f9f8;
+}
+
+/* Title */
+.why-tag {
+  background: #e8f3ee;
+  color: #2c6b4f;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.why-title {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Card */
+.why-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  transition: 0.4s;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover background effect */
+.why-card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  background: #2c6b4f;
+  left: 0;
+  bottom: 0;
+  transition: 0.4s;
+  z-index: 0;
+}
+
+.why-card:hover::before {
+  height: 100%;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Icon */
+.why-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Text */
+.why-card h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.why-card p {
+  color: #666;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Change text color on hover */
+.why-card:hover h5,
+.why-card:hover p,
+.why-card:hover .why-icon {
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .why-title {
+    font-size: 24px;
+  }
+}
+
+
+/* 3card images */
+.gallery-section {
+  background: #f7f9f8;
+}
+
+/* Title */
+.gallery-title {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.gallery-subtitle {
+  color: #777;
+}
+
+/* Card */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  cursor: pointer;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+/* Overlay */
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.75));
+  color: white;
+  transition: 0.4s;
+}
+
+.gallery-overlay h4 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.gallery-overlay p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Hover Effects */
+.gallery-card:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-card:hover .gallery-overlay {
+  background: linear-gradient(transparent, rgba(44,107,79,0.9));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery-card img {
+    height: 250px;
+  }
+}
+/* vision and mission  */
+.vision-mission-section {
+  background: #f2f7f5;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Section Title */
+.section-tag {
+  display: inline-block;
+  background-color: #e8f3ee;
+  color: #2c6b4f;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 32px;
+  color: #2c6b4f;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+
+/* Card */
+.vm-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: transform 0.4s, box-shadow 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.vm-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.12);
+}
+
+/* Icon */
+.vm-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #2c6b4f;
+  transition: transform 0.4s, color 0.4s;
+}
+
+.vm-card:hover .vm-icon {
+  transform: scale(1.2);
+  color: #1f4d38;
+}
+
+/* Card Heading */
+.vm-card h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #2c6b4f;
+  transition: color 0.4s;
+}
+
+.vm-card:hover h4 {
+  color: #1f4d38;
+}
+
+/* Card Text */
+.vm-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+  transition: color 0.4s;
+}
+
+.vm-card:hover p {
+  color: #333;
+}
+
+/* Optional Color Variations */
+.vision-card {
+  border-top: 5px solid #2c6b4f;
+}
+.mission-card {
+  border-top: 5px solid #3f8c6a;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 24px;
+  }
+
+  .vm-card {
+    padding: 25px 20px;
+  }
+
+  .vm-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .vm-card h4 {
+    font-size: 18px;
+  }
+
+  .vm-card p {
+    font-size: 14px;
+  }
+}
+
+
+
+/* core values sectiom */
+.core-section {
+  background: linear-gradient(to bottom, #ffffff, #f2f7f5);
+}
+
+/* Title */
+.core-tag {
+  background: #e8f3ee;
+  color: #2c6b4f;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.core-title {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Card */
+.core-card {
+  background: white;
+  border-radius: 18px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Glow Hover Effect */
+.core-card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(45deg, #2c6b4f, #3f8c6a);
+  left: 0;
+  bottom: 0;
+  transition: 0.4s;
+  z-index: 0;
+}
+
+.core-card:hover::before {
+  height: 100%;
+}
+
+.core-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Icon */
+.core-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Text */
+.core-card h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.core-card p {
+  color: #666;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Change Text Color On Hover */
+.core-card:hover h5,
+.core-card:hover p,
+.core-card:hover .core-icon {
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .core-title {
+    font-size: 24px;
+  }
+}

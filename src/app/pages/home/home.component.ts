@@ -7,11 +7,12 @@ import { HomeSafariComponent } from '../../component/home-safari/home-safari.com
 import { FooterComponent } from '../../component/footer/footer.component';
 import { ReviewComponent } from "../../component/review/review.component";
 import { RoomsImageshowComponent } from "../../component/rooms-imageshow/rooms-imageshow.component";
+import { SafariVideoComponent } from "../../component/safari-video/safari-video.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavBarComponent, ImageFrameComponent, OverviewComponent, HomeRoomsComponent, HomeSafariComponent, FooterComponent, ReviewComponent, ReviewComponent, RoomsImageshowComponent],
+  imports: [NavBarComponent, ImageFrameComponent, OverviewComponent, HomeRoomsComponent, HomeSafariComponent, FooterComponent, ReviewComponent, ReviewComponent, RoomsImageshowComponent, SafariVideoComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

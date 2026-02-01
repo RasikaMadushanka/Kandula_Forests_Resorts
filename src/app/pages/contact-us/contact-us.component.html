@@ -1,0 +1,116 @@
+<app-nav-bar></app-nav-bar>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<section class="premium-contact">
+    <div class="map-wrapper">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434505916!2d144.9537353153166!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sau!4v1611554567890!5m2!1sen!2sau" allowfullscreen="" loading="lazy"></iframe>
+        <div class="map-overlay"></div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="glass-card">
+            <div class="brand-header">
+                <img src="assets/images/confirmlogo2.png" alt="Logo" class="floating-logo">
+                <span class="badge">Open for Bookings</span>
+            </div>
+
+            <h2 class="main-title">Get in <span>Touch</span></h2>
+            
+            <div class="contact-methods">
+                <div class="method-card" style="--delay: 0.1s">
+                    <div class="icon-circle"><i class="fas fa-phone-alt"></i></div>
+                    <div class="text-info">
+                        <small>Direct Line</small>
+                        <a href="tel:+123456789">+1 (234) 567 890</a>
+                    </div>
+                </div>
+
+                <div class="method-card" style="--delay: 0.2s">
+                    <div class="icon-circle"><i class="fas fa-envelope-open-text"></i></div>
+                    <div class="text-info">
+                        <small>Support Email</small>
+                        <a href="mailto:hello@yoursite.com">helloyoursite.com</a>
+                    </div>
+                </div>
+
+                <div class="method-card" style="--delay: 0.3s">
+                    <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="text-info">
+                        <small>Our Office</small>
+                        <span>123 Elite Avenue, NY</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-actions">
+                <a href="#" class="booking-btn">
+                    <span>Book on Booking.com</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="social-links">
+                    <a href="#" class="soc-item"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#" class="soc-item"><i class="fas fa-globe"></i> Website</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-page">
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+
+  <div class="glass-container">
+    <div class="content-grid">
+      
+      <div class="form-wrapper">
+        <div class="form-header">
+          <h2>Ready for <span>Adventure?</span></h2>
+          <p>Send your details and let's start planning.</p>
+        </div>
+
+        <form #f="ngForm" class="interactive-form">
+          <div class="input-row">
+            <div class="input-field">
+              <input type="text" name="name" [(ngModel)]="contact.name" required placeholder=" ">
+              <label><i class="fas fa-user"></i> Full Name</label>
+            </div>
+            <div class="input-field">
+              <input type="email" name="email" [(ngModel)]="contact.email" required placeholder=" ">
+              <label><i class="fas fa-envelope"></i> Email</label>
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="input-field">
+              <input type="text" name="country" [(ngModel)]="contact.country" required placeholder=" ">
+              <label><i class="fas fa-globe"></i> Country</label>
+            </div>
+            <div class="input-field">
+              <input type="tel" name="phone" [(ngModel)]="contact.phone" required placeholder=" ">
+              <label><i class="fas fa-phone"></i> Phone Number</label>
+            </div>
+          </div>
+
+          <div class="input-field full">
+            <textarea name="message" [(ngModel)]="contact.message" rows="4" required placeholder=" "></textarea>
+            <label><i class="fas fa-map-signs"></i> Tell us about your dream tour...</label>
+          </div>
+
+          <button type="button" (click)="sendToWhatsApp()" class="btn-whatsapp">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-icon"><i class="fab fa-whatsapp"></i></span>
+          </button>
+        </form>
+
+        <div class="social-footer">
+          <a href="#" class="social-item"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-item"><i class="fas fa-hotel"></i></a>
+          <a href="#" class="social-item"><i class="fas fa-globe"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
