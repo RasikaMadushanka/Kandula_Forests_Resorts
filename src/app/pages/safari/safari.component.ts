@@ -5,11 +5,12 @@ import { FooterComponent } from "../../component/footer/footer.component";
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ContactUsComponent } from "../contact-us/contact-us.component";
+import { SafariContactusComponent } from "../../component/safari-contactus/safari-contactus.component";
 
 @Component({
   selector: 'app-safari',
   standalone: true,
-  imports: [SafariVideoComponent, NavBarComponent, FooterComponent, CommonModule, ContactUsComponent],
+  imports: [SafariVideoComponent, NavBarComponent, FooterComponent, CommonModule, SafariContactusComponent],
   templateUrl: './safari.component.html',
   styleUrl: './safari.component.css'
 })
@@ -36,6 +37,10 @@ export class SafariComponent {
     { url: 'assets/images/b18.jpeg', title: 'Bird Watching' },
     { url: 'assets/images/b19.jpeg', title: 'Jeep Adventure' },
     { url: 'assets/images/b20.jpeg', title: 'Bird Watching' },
+        { url: 'assets/images/safari.jpeg', title: 'Jeep Adventure' },
+    { url: 'assets/images/restaurent2.jpeg', title: 'Bird Watching' },
+    { url: 'assets/images/restaurent6.jpeg', title: 'Jeep Adventure' },
+    { url: 'assets/images/restaurent15.jpeg', title: 'Bird Watching' },
     
   ];
 }
