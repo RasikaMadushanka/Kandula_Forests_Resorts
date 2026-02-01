@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './contact-us.component.css'
 })
 export class ContactUsComponent {
-  contact = {
+ contact = {
     name: '',
     email: '',
     country: '',
@@ -21,15 +21,15 @@ export class ContactUsComponent {
   };
 
   sendToWhatsApp() {
-    const adminNumber = "947XXXXXXXX"; // Enter your Sri Lankan number here
-    
-    // Check if basic fields are filled
-    if(!this.contact.name || !this.contact.phone) {
-      alert("Please enter your name and contact number.");
+    const adminNumber = "947XXXXXXXX"; 
+
+    // 1. Validate inputs
+    if(!this.contact.name || !this.contact.phone || !this.contact.message) {
+      alert("Please fill in all required fields.");
       return;
     }
 
-    // Structure the WhatsApp message with bold formatting
+    // 2. Build the message
     const msg = `*NEW TOUR INQUIRY*%0A` +
                 `--------------------------%0A` +
                 `*Client:* ${this.contact.name}%0A` +
@@ -40,8 +40,18 @@ export class ContactUsComponent {
 
     const waUrl = `https://wa.me/${adminNumber}?text=${msg}`;
     
-    // Redirect user
+    // 3. Show Success Message
+    alert("Message structured successfully! Redirecting you to WhatsApp...");
+
+    // 4. Redirect
     window.open(waUrl, '_blank');
+
+    // 5. Optional: Reset form after sending
+    this.resetForm();
   }
 
+  resetForm() {
+    this.contact = { name: '', email: '', country: '', phone: '', message: '' };
+  }
 }
+
