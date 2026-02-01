@@ -54,28 +54,30 @@
     <!-- Right side: Booking Form -->
     <div class="room-right">
       <div class="booking-form">
+
+        <div *ngIf="showSuccess" class="success-message">
+          <div class="icon-circle">
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="text-content">
+            <h4>Booking Request Ready!</h4>
+            <p>Opening WhatsApp to finalize your stay...</p>
+          </div>
+        </div>
+
         <h3>Room Booking</h3>
 
-        <form (ngSubmit)="sendWhatsApp()" #bookingForm="ngForm">
+        <form (ngSubmit)="sendWhatsApp()" #bookingForm="ngForm" [style.opacity]="showSuccess ? '0.3' : '1'">
 
-          <!-- Name -->
           <input type="text" placeholder="Full Name" [(ngModel)]="booking.name" name="name" required>
-
-          <!-- Email -->
           <input type="email" placeholder="Email Address" [(ngModel)]="booking.email" name="email" required>
-
-          <!-- Contact Number -->
           <input type="tel" placeholder="Contact Number" [(ngModel)]="booking.phone" name="phone" required>
 
-          <!-- Country Dropdown -->
           <select [(ngModel)]="booking.country" name="country" required>
             <option value="">Select Country</option>
-            <option *ngFor="let country of countries" [value]="country">
-              {{ country }}
-            </option>
+            <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
           </select>
 
-          <!-- Room Type Dropdown -->
           <select [(ngModel)]="booking.roomType" name="roomType" required>
             <option value="">Select Room Type</option>
             <option>Deluxe Room</option>
@@ -83,23 +85,14 @@
             <option>Triple Room</option>
           </select>
 
-          <!-- Check-in Date -->
           <input type="date" [(ngModel)]="booking.checkinDate" name="checkinDate" required>
-
-      
-          <!-- Check-out Date -->
           <input type="date" [(ngModel)]="booking.checkoutDate" name="checkoutDate" required>
-
-          
-
-
-          <!-- Notes -->
           <textarea placeholder="Special Notes (Optional)" [(ngModel)]="booking.notes" name="notes"></textarea>
 
-          <button type="submit" class="whatsapp-btn" [disabled]="bookingForm.invalid">
-            Send Booking via WhatsApp
+          <button type="submit" class="whatsapp-btn" [disabled]="bookingForm.invalid || showSuccess">
+            <span *ngIf="!showSuccess">Send Booking via WhatsApp</span>
+            <span *ngIf="showSuccess">Processing... <i class="fas fa-spinner fa-spin"></i></span>
           </button>
-
 
         </form>
       </div>

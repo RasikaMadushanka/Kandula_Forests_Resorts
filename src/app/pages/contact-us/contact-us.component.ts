@@ -21,7 +21,7 @@ export class ContactUsComponent {
   };
 
   sendToWhatsApp() {
-    const adminNumber = "947XXXXXXXX"; 
+    const adminNumber = "94760374379"; 
 
     // 1. Validate inputs
     if(!this.contact.name || !this.contact.phone || !this.contact.message) {
@@ -30,7 +30,7 @@ export class ContactUsComponent {
     }
 
     // 2. Build the message
-    const msg = `*NEW TOUR INQUIRY*%0A` +
+    const msg = `*NEW TOUR or Booking INQUIRY*%0A` +
                 `--------------------------%0A` +
                 `*Client:* ${this.contact.name}%0A` +
                 `*Email:* ${this.contact.email}%0A` +
