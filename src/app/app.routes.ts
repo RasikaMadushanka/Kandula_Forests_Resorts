@@ -5,6 +5,7 @@ import { RoomDetailsailsComponent } from './pages/room-detailsails/room-detailsa
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { SafariComponent } from './pages/safari/safari.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 
 export const routes: Routes = [
      { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -31,6 +32,9 @@ export const routes: Routes = [
    {
     path:'safari',
     component:SafariComponent
-  }
-    
+  },
+  {
+  path:'gallery',
+  component:GalleryComponent
+  }  
 ];
