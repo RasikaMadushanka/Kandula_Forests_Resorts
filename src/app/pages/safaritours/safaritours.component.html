@@ -1,0 +1,112 @@
+<app-nav-bar></app-nav-bar>
+
+<section class="tour-container">
+    
+    <div class="tour-card">
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1590691566903-692bf5ca7493?auto=format&fit=crop&w=500" alt="Deer">
+            <span class="badge">3 Hours</span>
+        </div>
+        <div class="card-body">
+            <h2 class="tour-title">Quick Safari</h2>
+            <div class="inclusion-tags">
+                <span>Guide</span><span>Driver</span><span>Water</span>
+            </div>
+            <p class="tour-desc">Perfect for a quick adventure. Spot majestic elephants, deer, and birds.</p>
+            <button class="cta-button" (click)="scrollToForm('3 Hour Quick Safari')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="tour-card">
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=500" alt="Leopard">
+            <span class="badge">6 Hours</span>
+        </div>
+        <div class="card-body">
+            <h2 class="tour-title">Deep Jungle</h2>
+            <div class="inclusion-tags">
+                <span>Leopard Track</span><span>Fruits</span><span>Water</span>
+            </div>
+            <p class="tour-desc">Track leopards and sloth bears deep in the park. Take amazing pictures!</p>
+            <button class="cta-button" (click)="scrollToForm('6 Hour Deep Jungle')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="tour-card highlight">
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1581852017103-68ac65514cf7?auto=format&fit=crop&w=500" alt="Elephant feeding">
+            <span class="badge">1 Full Day</span>
+        </div>
+        <div class="card-body">
+            <h2 class="tour-title">Complete Adventure</h2>
+            <div class="inclusion-tags">
+                <span>Lunch</span><span>Transit Home</span><span>Expert</span>
+            </div>
+            <p class="tour-desc">Includes baby elephant feeding at the Transit Home and a local lunch.</p>
+            <button class="cta-button" (click)="scrollToForm('1 Day Complete')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="tour-card">
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=500" alt="Safari Sunset">
+            <span class="badge">2 Days</span>
+        </div>
+        <div class="card-body">
+            <h2 class="tour-title">Wildlife Immersion</h2>
+            <div class="inclusion-tags">
+                <span>Hotel</span><span>All Meals</span><span>2 Safaris</span>
+            </div>
+            <p class="tour-desc">Spend the night near the park. Experience both sunrise and sunset safaris.</p>
+            <button class="cta-button" (click)="scrollToForm('2 Day Immersion')">Book Now</button>
+        </div>
+    </div>
+
+</section>
+
+<section #bookingForm class="booking-section" *ngIf="isBookingVisible">
+    <div class="booking-wrapper">
+        <div class="info-panel">
+            <h3>Ready for Adventure?</h3>
+            <p>Fill out the form and our team will reach out to you directly on WhatsApp to finalize your Udawalawe Safari.</p>
+            <div class="contact-item"><span>📍</span> Udawalawe, Sri Lanka</div>
+            <div class="contact-item"><span>📞</span> +94 XX XXX XXXX</div>
+        </div>
+
+        <div class="form-panel">
+            <form class="safari-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" [(ngModel)]="booking.name" name="name" placeholder="E.g. John Doe" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Package</label>
+                        <select [(ngModel)]="booking.package" name="package">
+                            <option value="3 Hour Quick Safari">3 Hour Quick Safari</option>
+                            <option value="6 Hour Deep Jungle">6 Hour Deep Jungle</option>
+                            <option value="1 Day Complete">1 Day Complete Adventure</option>
+                            <option value="2 Day Immersion">2 Day Wildlife Immersion</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" [(ngModel)]="booking.date" name="date" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Travelers</label>
+                    <input type="number" [(ngModel)]="booking.people" name="people" placeholder="Number of people">
+                </div>
+
+                <button type="button" class="submit-btn" (click)="sendWhatsApp()">
+                    Confirm via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

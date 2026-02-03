@@ -1,8 +1,14 @@
 <app-nav-bar></app-nav-bar>
-<app-safari-video></app-safari-video>
+
+<app-safari-video data-aos="fade-zoom-in" data-aos-duration="1500"></app-safari-video>
+
 <div class="container py-5">
     <div class="row g-4">
-        <div class="col-lg-3 col-md-6 col-12" *ngFor="let item of safariImages">
+        <div class="col-lg-3 col-md-6 col-12" 
+             *ngFor="let item of safariImages; let i = index" 
+             data-aos="fade-up" 
+             [attr.data-aos-delay]="(i % 4) * 100"> 
+            
             <div class="image-card">
                 <div class="image-wrapper">
                     <img [src]="item.url" [alt]="item.title">
@@ -14,5 +20,7 @@
         </div>
     </div>
 </div>
-<app-safari-contactus></app-safari-contactus>
+
+<app-safari-contactus data-aos="slide-up" data-aos-offset="200"></app-safari-contactus>
+
 <app-footer></app-footer>
